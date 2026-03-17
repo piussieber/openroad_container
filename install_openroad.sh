@@ -9,6 +9,8 @@ else
 fi
 
 # build container
+export APPTAINER_TMPDIR=/tmp/apptainer_tmp
+mkdir -p $APPTAINER_TMPDIR
 apptainer build openroad.sif openroad.def
 
 # add installation pad to starting-script
