@@ -9,7 +9,7 @@ else
 fi
 
 # build container
-export APPTAINER_TMPDIR=/tmp/apptainer_tmp
+export APPTAINER_TMPDIR=/scratch/$USER/apptainer_tmp
 mkdir -p $APPTAINER_TMPDIR
 apptainer build openroad.sif openroad.def
 
@@ -22,4 +22,3 @@ echo "$PWD/openroad.sif" '$COMMAND' >> run_openroad_container_local.sh
 mkdir -p /home/$USER/bin;
 cp run_openroad_container_local.sh /home/$USER/bin/orc
 chmod +x /home/$USER/bin/orc
-/bin/tcsh -c rehash # Reload path in tcsh
