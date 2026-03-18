@@ -9,6 +9,9 @@ LIBRARY_PATH = /usr/pack
 
 apptainer exec \
 --bind $LIBRARY_PATH:$LIBRARY_PATH \
+--bind /scratch:/scratch \
+--bind /home:/home \
+--bind /usr/scratch:/usr/scratch \
 --env XDG_RUNTIME_DIR=/tmp/runtime-$USER \
 --env PS1="\[\e[38;5;112m\]OpenROAD_Container\[\e[0m\]:\[\e[38;5;111m\][\W]\[\e[0m\]$" \
 openroad.sif $COMMAND

@@ -44,7 +44,7 @@ From: ubuntu:24.04
     cmake -B build -S . -DCMAKE_BUILD_TYPE=Release $DEPS_ARGS
     cmake --build build -- -j $(nproc)
 
-    cp build/bin/openroad /usr/bin/
+    cp /OpenROAD/build/bin/openroad /usr/bin/
 
     cp /OpenROAD/etc/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
