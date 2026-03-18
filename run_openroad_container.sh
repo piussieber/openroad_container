@@ -5,7 +5,7 @@ else
     COMMAND="$1"
 fi
 
-LIBRARY_PATH = /usr/pack
+LIBRARY_PATH=/usr/pack
 
 apptainer exec \
 --bind $LIBRARY_PATH:$LIBRARY_PATH \
