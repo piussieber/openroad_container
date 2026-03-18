@@ -5,7 +5,7 @@ if test -d OpenROAD; then
     git submodule update --init --recursive
     cd ..
 else
-    git clone --recursive https://github.com/dbekatli/OpenROAD.git
+    git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD/tree/master
 fi
 
 # build container
