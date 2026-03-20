@@ -7,6 +7,8 @@ fi
 
 LIBRARY_PATH=/usr/pack
 
+export XDG_RUNTIME_DIR="/tmp/runtime-$USER"
+
 apptainer exec \
 --bind $LIBRARY_PATH:$LIBRARY_PATH \
 --bind /scratch:/scratch \
