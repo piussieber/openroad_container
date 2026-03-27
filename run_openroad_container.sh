@@ -15,5 +15,5 @@ apptainer exec \
 --bind /home:/home \
 --bind /usr/scratch:/usr/scratch \
 --env XDG_RUNTIME_DIR=/tmp/runtime-$USER \
---env PS1="\[\e[38;5;112m\]OpenROAD_Dev_Container\[\e[0m\]:\[\e[38;5;111m\][\W]\[\e[0m\]$" \
+--env PS1="\[\e[31;5;112m\]OpenROAD_Dev_Container\[\e[0m\]:\[\e[38;5;111m\][\W]\[\e[0m\]$" \
 openroad.sif $COMMAND
