@@ -1,11 +1,14 @@
 #!/bin/bash
 if test -d OpenROAD; then
-    cd OpenROAD
-    git pull
-    git submodule update --init --recursive
-    cd ..
+#    cd OpenROAD
+#    git pull
+#    git submodule update --init --recursive
+#    cd ..
+    pass
 else
-    git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD.git
+#    git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD.git
+    echo "No OpenROAD directory found. Please clone the OpenROAD repository and run this script again."
+    exit 1
 fi
 
 # build container
@@ -20,5 +23,5 @@ echo "$PWD/openroad.sif" '$COMMAND' >> run_openroad_container_local.sh
 
 # copy file to location already in path
 mkdir -p /home/$USER/bin;
-cp run_openroad_container_local.sh /home/$USER/bin/orc
-chmod +x /home/$USER/bin/orc
+cp run_openroad_container_local.sh /home/$USER/bin/ordc
+chmod +x /home/$USER/bin/ordc
