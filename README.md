@@ -2,11 +2,11 @@
 
 Installation scripts to build an Apptainer image for OpenROAD and install it on your `PATH`.
 
-## Installation
+## Installation of the development container
 Run the following commands to install:
 
 ```sh
-git clone https://github.com/piussieber/openroad_container.git
+git clone -b development_container https://github.com/piussieber/openroad_container.git
 cd openroad_container
 ./install_openroad.sh
 rehash # only for tcsh, to refresh the PATH in the current shell
