@@ -7,7 +7,7 @@ Run the following commands to install:
 
 ```sh
 git clone -b development_container https://github.com/piussieber/openroad_container.git openroad_dev_container
-cd openroad_container
+cd openroad_dev_container
 git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD.git
 ./install_openroad.sh
 rehash # only for tcsh, to refresh the PATH in the current shell

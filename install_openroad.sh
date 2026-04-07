@@ -4,7 +4,7 @@ if test -d OpenROAD; then
 #    git pull
 #    git submodule update --init --recursive
 #    cd ..
-    pass
+    true
 else
 #    git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD.git
     echo "No OpenROAD directory found. Please clone the OpenROAD repository and run this script again."
