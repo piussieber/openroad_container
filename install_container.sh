@@ -16,6 +16,11 @@ fi
 #mkdir -p $APPTAINER_TMPDIR
 #apptainer build openroad.sif openroad.def 
 
+# Download pre-built container
+cd container
+wget https://github.com/piussieber/openroad_container/releases/download/2026_04_08/openroad.sif
+cd ..
+
 # add installation pad to starting-script
 cp run_container.sh run_container_local.sh
 sed -i '$ d' run_container_local.sh # delete lowest line
