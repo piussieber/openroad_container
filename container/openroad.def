@@ -9,7 +9,9 @@ From: ubuntu:24.04
     export OPENROAD_EXE=/usr/bin/openroad
 
 %files
-    ./OpenROAD /OpenROAD
+    ../OpenROAD /OpenROAD
+    ./build_openroad.sh /usr/bin/build_openroad
+    ./run_openroad.sh /usr/bin/openroad
 
 %post
     # set -e
@@ -30,25 +32,34 @@ From: ubuntu:24.04
     useradd --create-home --uid 9000 -g user --shell /bin/bash user
 
     # Build OpenROAD
-    cd /OpenROAD
+    #cd /OpenROAD
 
-    if [ -f /opt/rh/gcc-toolset-13/enable ]; then
-        source /opt/rh/gcc-toolset-13/enable
-    fi
+    #if [ -f /opt/rh/gcc-toolset-13/enable ]; then
+    #    source /opt/rh/gcc-toolset-13/enable
+    #fi
 
-    DEPS_ARGS=""
-    if [ -f /etc/openroad_deps_prefixes.txt ]; then
-        DEPS_ARGS=$(cat /etc/openroad_deps_prefixes.txt)
-    fi
+    #DEPS_ARGS=""
+    #if [ -f /etc/openroad_deps_prefixes.txt ]; then
+    #    DEPS_ARGS=$(cat /etc/openroad_deps_prefixes.txt)
+    #fi
 
-    cmake -B build -S . -DCMAKE_BUILD_TYPE=Release $DEPS_ARGS
-    cmake --build build -- -j $(nproc)
+    #cmake -B build -S . -DCMAKE_BUILD_TYPE=Release $DEPS_ARGS
+    #cmake --build build -- -j $(nproc)
 
-    cp /OpenROAD/build/bin/openroad /usr/bin/
+    #mkdir -p /home/user/bin;
+    #cp /OpenROAD/build/bin/openroad /home/user/bin/
+    #chmod +x /home/user/bin/openroad
+
+    #cp /OpenROAD/build/bin/openroad /usr/bin/
 
     cp /OpenROAD/etc/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
     chmod 775 /usr/local/bin/docker-entrypoint.sh
+
+    chmod +x /usr/bin/openroad
+    chmod +x /usr/bin/build_openroad
+
+    rm -rf /OpenROAD
 
 %runscript
     exec openroad "$@"

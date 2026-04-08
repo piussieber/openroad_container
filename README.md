@@ -1,6 +1,6 @@
-# OpenROAD Apptainer Container
+# OpenROAD Singularity Container for Development
 
-Installation scripts to build an Apptainer image for OpenROAD and install it on your `PATH`.
+Singularity container to build and run openroid. The provided scripts install the container directly in `PATH` to make it easy accessible.
 
 ## Installation of the development container
 Run the following commands to install:
@@ -9,12 +9,17 @@ Run the following commands to install:
 git clone -b development_container https://github.com/piussieber/openroad_container.git openroad_dev_container
 cd openroad_dev_container
 git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD.git
-./install_openroad.sh
+./install_container.sh
 rehash # only for tcsh, to refresh the PATH in the current shell
 ```
+## Build OpenROAD
+OpenROAD can be built in the container with the command `ordc build_openroad`. The built files are mounted with a bind to make them persistent.
 
-## Run Container
-The container can be started with the `ordc` (for openroad-development-container) command. This command opens a bash shell inside the container by default. OpenROAD can be started inside the container with the `openroad` command. To start OpenROAD directly without opening bash first, pass the command as an argument (e.g., `ordc openroad`).
+## Run OpenROAD
+OpenROAD can be started with the `ordc openroad` command. 
+
+## Additional Informations
+The container can be started with the `ordc` (for openroad-development-container) command. Running it without any additional argument opens a bash shell inside the container by default. OpenROAD can be started inside the container with the `openroad` command.
 
 The container has access to the files in the directory where it was started, as well as the following paths:
 ```
@@ -25,4 +30,4 @@ The container has access to the files in the directory where it was started, as 
 This can be changed in the `run_openroad_container.sh` file for different working environments.
 
 ## Update Container
-After local changes where made or new changes where pulled from git, `./install_openroad.sh` can be executed again to rebuild the container. The overwrite warning can be accepted.
+The provided container also includes all the dependencies for OpenROAD. If dependencies change, the container needs to be rebuilt. This can be done running `build_container.sh`.

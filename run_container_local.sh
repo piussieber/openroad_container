@@ -9,11 +9,12 @@ LIBRARY_PATH=/usr/pack
 
 export XDG_RUNTIME_DIR="/tmp/runtime-$USER"
 
-apptainer exec \
+singularity exec \
 --bind $LIBRARY_PATH:$LIBRARY_PATH \
 --bind /scratch:/scratch \
 --bind /home:/home \
 --bind /usr/scratch:/usr/scratch \
 --env XDG_RUNTIME_DIR=/tmp/runtime-$USER \
 --env PS1="\[\e[31;5;112m\]OpenROAD_Dev_Container\[\e[0m\]:\[\e[38;5;111m\][\W]\[\e[0m\]$" \
-openroad.sif $COMMAND
+--bind /scratch/sem26f29/openroad_dev_container/OpenROAD:/OpenROAD \
+/scratch/sem26f29/openroad_dev_container/container/openroad.sif $COMMAND
