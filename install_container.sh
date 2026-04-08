@@ -18,7 +18,7 @@ fi
 
 # Download pre-built container
 cd container
-wget https://github.com/piussieber/openroad_container/releases/download/2026_04_08/openroad.sif
+wget https://github.com/piussieber/openroad_container/releases/download/2026_04_08b/openroad.sif
 cd ..
 
 # add installation pad to starting-script

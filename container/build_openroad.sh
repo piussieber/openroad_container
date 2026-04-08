@@ -7,4 +7,4 @@ fi
 
 cd /OpenROAD/etc
 
-./Build.sh
+./Build.sh -threads=$(nproc --all)
