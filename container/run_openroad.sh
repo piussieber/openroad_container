@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/OpenROAD/build/bin/openroad 
+/OpenROAD/build/bin/openroad  "$@"

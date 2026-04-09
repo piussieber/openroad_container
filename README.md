@@ -1,6 +1,6 @@
 # OpenROAD Singularity Container for Development
 
-Singularity container to build and run openroid. The provided scripts install the container directly in `PATH` to make it easy accessible.
+Singularity container to build and run OpenROAD. The provided scripts install the container directly in `PATH` to make it easily accessible.
 
 ## Installation of the development container
 Run the following commands to install the prebuilt container:
